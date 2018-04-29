@@ -1,4 +1,3 @@
-# NOTE validation data is not required
 # import packages
 from conf import myConfig as config
 from keras.preprocessing.image import ImageDataGenerator
