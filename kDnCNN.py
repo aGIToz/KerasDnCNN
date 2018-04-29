@@ -28,7 +28,7 @@ print(cleanImages.dtype)
 cleanImages=cleanImages/255.0
 cleanImages=cleanImages.astype('float32')
 
-# define augmentor and custom flow
+# define augmentor and create custom flow
 aug = ImageDataGenerator(rotation_range=30, fill_mode="nearest")
 def myFlow(generator,X):
     for batch in generator.flow(x=X,batch_size=config.batch_size,seed=7):
@@ -36,7 +36,7 @@ def myFlow(generator,X):
         noisyImagesBatch=batch+trueNoiseBatch
         yield (noisyImagesBatch,trueNoiseBatch)
 
-# define custom learning rate scheduler
+# create custom learning rate scheduler
 def lr_decay(epoch):
     initAlpha=0.001
     factor=0.5
@@ -46,7 +46,7 @@ def lr_decay(epoch):
 callbacks=[LearningRateScheduler(lr_decay)]
 
 
-# define custom loss, compile the model
+# create custom loss, compile the model
 print("[INFO] compilingTheModel")
 opt=optimizers.Adam(lr=0.001)
 def custom_loss(y_true,y_pred):
