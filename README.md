@@ -24,3 +24,5 @@ $ python testPSNR.py --dataPath /path/to/test/dataset/ --weightsPath /path/to/my
 |:-----------:|:-------:|:----------------:|
 | 25          | 30.4    |       28.3       |
 
+- Any suggestion to improve performance of KDnCNN-S to make it at par with original DnCNN-S is welcomed.
+
