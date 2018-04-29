@@ -18,7 +18,7 @@ $ python testPSNR.py --dataPath /path/to/test/dataset/ --weightsPath /path/to/my
 ```
 # Results
 ![compare](./img/results.png)
-- I have used Set 12 dataset for testing.
+- I have used Set12/ dataset for testing. Avg PSNR(dB)
 
 | Noise Level | DnCNN-S |     KDnCNN-S     |
 |:-----------:|:-------:|:----------------:|
