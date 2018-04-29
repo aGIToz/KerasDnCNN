@@ -28,7 +28,6 @@ nmodel=load_model(args.weightsPath,custom_objects={'custom_loss':custom_loss})
 print('nmodel is loaded')
 
 #createArrayOfTestImages
-    #print(args.dataPath)
 p=Path(args.dataPath)
 listPaths=list(p.glob('./*.png'))
 imgTestArray = []
@@ -36,33 +35,19 @@ for path in listPaths:
     imgTestArray.append(((cv2.resize
     (cv2.imread(str(path),0),(200,200),
     interpolation=cv2.INTER_CUBIC))))
-    #print(imgTestArray[1].max())
 imgTestArray=np.array(imgTestArray)/255
-    #print('lenImages',len(imgTestArray))
-    #print(imgTestArray.shape)
-
+    
 #calculatePSNR
 sumPSNR=0
 for i in range(0,len(imgTestArray)):
     cv2.imshow('trueCleanImage',imgTestArray[i]); cv2.waitKey(0)
     noisyImage=imgTestArray[i]+np.random.normal(0.0,25/255, 
         imgTestArray[i].shape)
-        #print("Orignal",imgTestArray[i])
-        #print(imgTestArray[i].min(),imgTestArray[i].max())
-        #print(imgTestArray[i].mean())
-        #print("Noise",noisyImage)
-        #print(noisyImage.min(),noisyImage.max())
-        #print(noisyImage.mean())
     cv2.imshow('noisyImage',noisyImage); cv2.waitKey(0)
         #print(np.expand_dims(np.expand_dims(noisyImage,axis=2),axis=0).shape)
     error=nmodel.predict(np.expand_dims(np.expand_dims(noisyImage,axis=2),axis=0))
     predClean=noisyImage-np.squeeze(error)
-        #print("ErrorIm",error)
         #print(error.min(),error.max())
-        #print(error.mean())
-        #print("PreImage",predClean)
-        #print(predClean.min(),predClean.max())
-        #print(predClean.mean())
     cv2.imshow('predCleanImage',predClean); cv2.waitKey(0)
     psnr=compare_psnr(imgTestArray[i],predClean)
     sumPSNR=sumPSNR+psnr
