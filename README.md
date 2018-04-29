@@ -17,6 +17,6 @@ $ python kDnCNN.py    #to train, and it saves model myModel.h5 in your working d
 $ python testPSNR.py --dataPath /path/to/test/dataset/ --weightsPath /path/to/myModel.h5    #to calculate avg PSNR on test data
 ```
 # Results
-
+![compare](./img/results.png)
 I have used Set 12 dataset for testing.
 
