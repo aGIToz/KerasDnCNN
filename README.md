@@ -12,5 +12,8 @@ This implementation is only for DnCNN-S (Specified noise level).
 
 # Commands
 ``` shell
-$ sudo
+$ python generateData.py    #this will create new folder name trainingPatch containg image patches.
+$ python kDnCNN.py    #to train, and it saves model myModel.h5 in your working directory.
+$ python testPSNR.py --dataPath /path/to/test/dataset/ --weightsPath /path/to/myModel.h5    #to calculate avg PSNR on test data
+```
 
