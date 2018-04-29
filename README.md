@@ -8,7 +8,9 @@ This implementation is only for DnCNN-S (Specified noise level).
 - This project is also useful to know "How to create custom loss, custom data-augmentation flow and custom learning rate scheduler in keras?". I had a hard time figuring it out  myself.
 
 # Requirments
-- python 3, keras 2, OpenCV 3 were being used for development
+- python 3, keras 2, OpenCV 3 were being used for development.
 
-# 
+# Commands
+``` shell
+$ sudo
 
