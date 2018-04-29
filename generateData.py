@@ -5,7 +5,7 @@ import cv2
 from conf import myConfig as config
 from pathlib import Path
 
-#Read the images into numpy arrays
+# define scales
 scales=[1,0.9,0.8,0.7]
 count=0
 
@@ -17,7 +17,7 @@ for path in listPaths:
     imgArray.append(cv2.imread(str(path),0))
 print('lenImages',len(imgArray))
 
-#calculate the no of patches
+#calculate the number of patches
 for i in range(len(imgArray)):
     img = imgArray[i] 
     for s in range(len(scales)):
@@ -38,9 +38,8 @@ else:
 print('total patches=%d, batch_size=%d, total_batches=%d' % 
         (numPatches, config.batch_size, numPatches/config.batch_size))
 
-#data matrix
+#numpy array to contain patches for training
 inputs=np.zeros((int(numPatches), int(config.pat_size), int(config.pat_size),1),dtype=np.uint8)
-
 
 #generate patches
 count=0
