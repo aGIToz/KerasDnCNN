@@ -20,3 +20,7 @@ $ python testPSNR.py --dataPath /path/to/test/dataset/ --weightsPath /path/to/my
 ![compare](./img/results.png)
 - I have used Set 12 dataset for testing.
 
+| Noise Level | DnCNN-S |     KDnCNN-S     |
+|:-----------:|:-------:|:----------------:|
+| 25          | 30.4    |       28.3       |
+
