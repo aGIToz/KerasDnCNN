@@ -3,7 +3,7 @@ Keras implementation of DnCNN-S. Originaly as proposed by Zhang et al in the pap
 This implementation is only for DnCNN-S (Specified noise level).
 
 ## Functionality
-- This project is  useful to denoise an image, if the noise level in an image is known or estimated. 
+- This project is  useful to denoise an image, if the noise level in an image is known or estimated. You just need to change the scale parameter in the file conf/myConfig.py.
 
 - This project is also useful to know **"How to create custom loss, custom real time data-augmentation flow and custom learning rate scheduler in keras?"**, check kDnCNN.py for that, I had a hard time figuring it out  myself.
 
